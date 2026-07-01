@@ -1,11 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My Online Shop</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>Hello World</h1>
+
+    <header class="navbar">
+        <div class="logo">My<span>Shop</span></div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon">🛒 Cart (0)</div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Premium Gadgets, Exclusive Deals!</h1>
+            <p>Order today and get amazing discounts on your favorite tech.</p>
+            <button class="shop-btn">Shop Now</button>
+        </div>
+    </section>
+
+    <main class="product-container">
+        <h2>Featured Products</h2>
+
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500" alt="Headphones">
+                <h3>Wireless Headphones</h3>
+                <p class="price">$45.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500" alt="Watch">
+                <h3>Smart Watch v2</h3>
+                <p class="price">$79.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=500" alt="Earbuds">
+                <h3>Bluetooth Earbuds</h3>
+                <p class="price">$25.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 My Online Shop. All Rights Reserved.</p>
+    </footer>
+
 </body>
+
 </html>
