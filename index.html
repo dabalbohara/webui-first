@@ -12,15 +12,19 @@
 
     <header class="navbar">
         <div class="logo">My<span>Shop</span></div>
-        <nav>
+        <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <nav id="primary-navigation">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-        <div class="cart-icon">🛒 Cart (0)</div>
+        <div class="cart-icon" tabindex="0">🛒 Cart (0)</div>
     </header>
 
     <section class="hero">
@@ -61,6 +65,17 @@
     <footer>
         <p>&copy; 2026 My Online Shop. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        (function () {
+            const btn = document.querySelector('.nav-toggle');
+            const nav = document.getElementById('primary-navigation');
+            btn.addEventListener('click', function () {
+                const open = nav.classList.toggle('open');
+                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+        })();
+    </script>
 
 </body>
 

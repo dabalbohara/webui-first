@@ -59,6 +59,45 @@ body {
     font-weight: 500;
 }
 
+/* Mobile nav toggle */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-toggle .hamburger {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: white;
+    position: relative;
+}
+
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 22px;
+    height: 2px;
+    background: white;
+    transition: transform 0.3s ease;
+}
+
+.nav-toggle .hamburger::before {
+    top: -7px;
+}
+
+.nav-toggle .hamburger::after {
+    top: 7px;
+}
+
 /* 2. Hero Banner Styling */
 .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1468436139062-f60a71c5c892?w=1200');
@@ -176,4 +215,90 @@ footer {
     color: #aaa;
     margin-top: 40px;
     font-size: 14px;
+}
+
+/* Accessibility: focus outlines */
+a:focus,
+.shop-btn:focus,
+.add-to-cart:focus,
+.cart-icon:focus {
+    outline: 3px solid rgba(233, 69, 96, 0.25);
+    outline-offset: 2px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 12px 4%;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .navbar nav {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background-color: #1a1a2e;
+        z-index: 40;
+    }
+
+    .navbar nav.open {
+        display: block;
+    }
+
+    .navbar nav ul {
+        display: flex;
+        flex-direction: column;
+        padding: 12px 5%;
+        list-style: none;
+    }
+
+    .navbar nav ul li {
+        margin: 10px 0;
+    }
+
+    .navbar nav ul li a {
+        font-size: 18px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .cart-icon {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+
+    .hero {
+        height: 300px;
+        padding: 0 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .product-card img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 22px;
+    }
+
+    .shop-btn {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
 }
