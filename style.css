@@ -137,6 +137,94 @@ body {
     background-color: #cf2a4a;
 }
 
+.shop-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    padding: 20px;
+}
+
+.shop-modal.open {
+    display: flex;
+}
+
+.shop-modal-content {
+    background: white;
+    border-radius: 14px;
+    padding: 30px;
+    width: min(520px, 100%);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    position: relative;
+}
+
+.shop-modal-content h2 {
+    margin-bottom: 12px;
+    font-size: 28px;
+}
+
+.shop-modal-content p {
+    margin-bottom: 24px;
+    color: #555;
+}
+
+.shop-modal-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.shop-modal-actions button {
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.shop-modal-actions .view-products {
+    background-color: #1a1a2e;
+    color: white;
+}
+
+.shop-modal-actions .view-products:hover {
+    background-color: #3a3a5f;
+}
+
+.shop-modal-actions .secondary {
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.shop-modal-actions .secondary:hover {
+    background-color: #e0e0e8;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: #1a1a2e;
+    color: white;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    background: #e94560;
+}
+
 /* 3. Product Grid Styling */
 .product-container {
     max-width: 1200px;
@@ -215,6 +303,110 @@ footer {
     color: #aaa;
     margin-top: 40px;
     font-size: 14px;
+}
+
+.cart-panel {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 110;
+    padding: 20px;
+}
+
+.cart-panel.open {
+    display: flex;
+}
+
+.cart-panel-content {
+    background: white;
+    border-radius: 14px;
+    padding: 25px;
+    width: min(520px, 100%);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+.cart-panel-content h2 {
+    margin-bottom: 18px;
+    font-size: 26px;
+}
+
+.cart-items {
+    min-height: 120px;
+    margin-bottom: 18px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.cart-item-total {
+    font-weight: bold;
+    color: #1a1a2e;
+}
+
+.cart-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.checkout-btn {
+    background-color: #1a1a2e;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.checkout-btn:hover {
+    background-color: #3a3a5f;
+}
+
+.empty-cart {
+    color: #555;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.close-cart {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: #1a1a2e;
+    color: white;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.close-cart:hover {
+    background: #e94560;
 }
 
 /* Accessibility: focus outlines */

@@ -21,7 +21,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#products">Products</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">00099221122</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
         <div class="cart-icon" tabindex="0">🛒 Cart (0)</div>
@@ -31,36 +31,124 @@
         <div class="hero-content">
             <h1>Premium Gadgets, Exclusive Deals!</h1>
             <p>Order today and get amazing discounts on your favorite tech.</p>
-            <button class="shop-btn">Shop Now</button>
+            <button class="shop-btn" type="button">Shop Now</button>
         </div>
     </section>
 
-    <main class="product-container">
+    <main class="product-container" id="products">
         <h2>Featured Products</h2>
 
         <div class="product-grid">
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500" alt="Headphones">
+                <img src="images/wireless-headphones.svg" alt="Wireless Headphones">
                 <h3>Wireless Headphones</h3>
                 <p class="price">¥4000</p>
                 <button class="add-to-cart">Add to Cart</button>
             </div>
 
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500" alt="Watch">
+                <img src="images/smart-watch.svg" alt="Smart Watch">
                 <h3>Smart Watch v2</h3>
                 <p class="price">¥7999</p>
                 <button class="add-to-cart">Add to Cart</button>
             </div>
 
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=500" alt="Earbuds">
+                <img src="images/bluetooth-earbuds.svg" alt="Bluetooth Earbuds">
                 <h3>Bluetooth Earbuds</h3>
                 <p class="price">¥2500</p>
                 <button class="add-to-cart">Add to Cart</button>
             </div>
+
+            <div class="product-card">
+                <img src="images/wireless-gaming-mouse.svg" alt="Wireless Gaming Mouse">
+                <h3>Wireless Gaming Mouse</h3>
+                <p class="price">¥2999</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/laptop-stand.svg" alt="Laptop Stand">
+                <h3>Adjustable Laptop Stand</h3>
+                <p class="price">¥1799</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/bluetooth-speaker.svg" alt="Portable Bluetooth Speaker">
+                <h3>Portable Bluetooth Speaker</h3>
+                <p class="price">¥3499</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/power-bank.svg" alt="Power Bank">
+                <h3>Fast Charging Power Bank</h3>
+                <p class="price">¥1299</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/phone-case.svg" alt="Phone Case">
+                <h3>Protective Phone Case</h3>
+                <p class="price">¥899</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/charging-pad.svg" alt="Wireless Charging Pad">
+                <h3>Wireless Charging Pad</h3>
+                <p class="price">¥1899</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/digital-camera.svg" alt="Digital Camera">
+                <h3>Compact Digital Camera</h3>
+                <p class="price">¥8999</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/noise-headset.svg" alt="Noise Cancelling Headset">
+                <h3>Noise-Cancelling Headset</h3>
+                <p class="price">¥4599</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/usb-c-cable.svg" alt="USB-C Cable Pack">
+                <h3>Premium USB-C Cable Pack</h3>
+                <p class="price">¥499</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
         </div>
     </main>
+
+    <div class="shop-modal" id="shop-modal" aria-hidden="true">
+        <div class="shop-modal-content" role="dialog" aria-modal="true" aria-labelledby="shop-modal-title">
+            <button class="close-modal" aria-label="Close shop dialog">×</button>
+            <h2 id="shop-modal-title">Shop Now</h2>
+            <p>Select a section below to start shopping quickly.</p>
+            <div class="shop-modal-actions">
+                <button class="view-products" type="button">View Featured Products</button>
+                <button class="close-modal secondary" type="button">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="cart-panel" id="cart-panel" aria-hidden="true">
+        <div class="cart-panel-content" role="dialog" aria-modal="true" aria-labelledby="cart-panel-title">
+            <button class="close-cart" aria-label="Close cart">×</button>
+            <h2 id="cart-panel-title">Your Cart</h2>
+            <div class="cart-items"></div>
+            <div class="cart-summary">
+                <span>Total:</span>
+                <strong id="cart-total">¥0</strong>
+            </div>
+            <button class="checkout-btn" type="button">Checkout</button>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2026 DD Online Shop. All Rights Reserved.</p>
@@ -68,12 +156,124 @@
 
     <script>
         (function () {
-            const btn = document.querySelector('.nav-toggle');
+            const navBtn = document.querySelector('.nav-toggle');
             const nav = document.getElementById('primary-navigation');
-            btn.addEventListener('click', function () {
+            const shopBtn = document.querySelector('.shop-btn');
+            const modal = document.getElementById('shop-modal');
+            const closeButtons = modal.querySelectorAll('.close-modal');
+            const viewProductsBtn = modal.querySelector('.view-products');
+            const productsSection = document.getElementById('products');
+            const cartIcon = document.querySelector('.cart-icon');
+            const cartPanel = document.getElementById('cart-panel');
+            const closeCartBtn = document.querySelector('.close-cart');
+            const cartItemsContainer = cartPanel.querySelector('.cart-items');
+            const cartTotalElement = document.getElementById('cart-total');
+            const checkoutBtn = document.querySelector('.checkout-btn');
+
+            const cart = {};
+
+            navBtn.addEventListener('click', function () {
                 const open = nav.classList.toggle('open');
-                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+                navBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
             });
+
+            function openModal() {
+                modal.classList.add('open');
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                modal.classList.remove('open');
+                modal.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+
+            function openCart() {
+                cartPanel.classList.add('open');
+                cartPanel.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeCart() {
+                cartPanel.classList.remove('open');
+                cartPanel.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+
+            function updateCartDisplay() {
+                const items = Object.values(cart);
+                cartItemsContainer.innerHTML = '';
+
+                if (items.length === 0) {
+                    cartItemsContainer.innerHTML = '<p class="empty-cart">Your cart is empty.</p>';
+                } else {
+                    items.forEach(item => {
+                        const itemRow = document.createElement('div');
+                        itemRow.className = 'cart-item';
+                        itemRow.innerHTML = `
+                            <div class="cart-item-info">
+                                <strong>${item.name}</strong>
+                                <span>¥${item.price} x ${item.quantity}</span>
+                            </div>
+                            <span class="cart-item-total">¥${item.price * item.quantity}</span>
+                        `;
+                        cartItemsContainer.appendChild(itemRow);
+                    });
+                }
+
+                const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+                cartTotalElement.textContent = `¥${total}`;
+                cartIcon.textContent = `🛒 Cart (${items.reduce((sum, item) => sum + item.quantity, 0)})`;
+            }
+
+            function addToCart(card) {
+                const name = card.querySelector('h3').textContent;
+                const priceText = card.querySelector('.price').textContent;
+                const price = Number(priceText.replace(/[^0-9]/g, ''));
+
+                if (!cart[name]) {
+                    cart[name] = { name, price, quantity: 0 };
+                }
+                cart[name].quantity += 1;
+                updateCartDisplay();
+            }
+
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', function () {
+                    const card = this.closest('.product-card');
+                    if (card) {
+                        addToCart(card);
+                    }
+                });
+            });
+
+            cartIcon.addEventListener('click', openCart);
+            closeCartBtn.addEventListener('click', closeCart);
+            cartPanel.addEventListener('click', function (event) {
+                if (event.target === cartPanel) {
+                    closeCart();
+                }
+            });
+
+            checkoutBtn.addEventListener('click', function () {
+                alert('Checkout feature is not set up yet. Your cart is ready!');
+            });
+
+            shopBtn.addEventListener('click', openModal);
+            closeButtons.forEach(button => button.addEventListener('click', closeModal));
+            modal.addEventListener('click', function (event) {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+
+            viewProductsBtn.addEventListener('click', function () {
+                closeModal();
+                productsSection.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            updateCartDisplay();
         })();
     </script>
 
