@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DD Online Shop</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">"
 </head>
 
 <body>
@@ -30,14 +30,85 @@
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Premium Gadgets, Exclusive Deals!</h1>
-            <p>Order today and get amazing discounts on your favorite tech.</p>
-            <button class="shop-btn" type="button">Shop Now</button>
+            <span class="eyebrow">Curated tech lifestyle</span>
+            <h1>Premium gadgets, smarter everyday living.</h1>
+            <p>Discover fast shipping, exclusive deals, and beautifully designed accessories for modern life.</p>
+            <div class="hero-actions">
+                <button class="shop-btn" type="button">Shop Now</button>
+                <a class="secondary-link" href="#products">Explore Products</a>
+            </div>
+            <div class="hero-highlights">
+                <span>⚡ Fast Delivery</span>
+                <span>🛡️ Secure Checkout</span>
+                <span>⭐ 4.9/5 Rated</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="feature-section">
+        <div class="feature-grid">
+            <article class="feature-card">
+                <h3>Fresh Arrivals</h3>
+                <p>Stay ahead with the latest gadgets and accessories released every season.</p>
+            </article>
+            <article class="feature-card">
+                <h3>Smart Savings</h3>
+                <p>Enjoy premium quality at prices that feel as good as the products look.</p>
+            </article>
+            <article class="feature-card">
+                <h3>Gift-Ready Picks</h3>
+                <p>Thoughtful items for work, travel, and everyday comfort that feel special.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="stats-bar">
+        <div class="card">
+            <div><strong>12k+</strong><span>Happy Customers</span></div>
+            <div><strong>98%</strong><span>On-time Delivery</span></div>
+            <div><strong>24/7</strong><span>Support Available</span></div>
+        </div>
+    </section>
+
+    <section class="delivery-section">
+        <div class="delivery-card">
+            <div class="delivery-content">
+                <span class="eyebrow">Online Delivery</span>
+                <h2>Fast delivery right to your doorstep</h2>
+                <p>Order from anywhere and enjoy secure packaging, live tracking, and quick delivery in your city.</p>
+                <ul>
+                    <li>Same-day dispatch for selected products</li>
+                    <li>Tracking updates sent to your phone</li>
+                    <li>Cash on delivery and digital payment available</li>
+                </ul>
+            </div>
+            <div class="delivery-info">
+                <div class="delivery-box">
+                    <strong>2-4 hrs</strong>
+                    <span>Express delivery</span>
+                </div>
+                <div class="delivery-box">
+                    <strong>Free</strong>
+                    <span>Delivery above ¥5000</span>
+                </div>
+                <div class="delivery-box">
+                    <strong>24/7</strong>
+                    <span>Support line</span>
+                </div>
+            </div>
         </div>
     </section>
 
     <main class="product-container" id="products">
         <h2>Featured Products</h2>
+
+        <div class="product-toolbar">
+            <label class="search-bar" for="product-search">
+                <span>🔍</span>
+                <input id="product-search" type="search" placeholder="Search gadgets or accessories" />
+            </label>
+            <p class="search-help">Try searching for headphones, watch, mouse, or speaker.</p>
+        </div>
 
         <div class="product-grid">
             <div class="product-card">
@@ -166,132 +237,13 @@
         </div>
     </div>
 
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
     <footer>
-        <p>&copy; 2026 DD Online Shop. All Rights Reserved.</p>
+        <p>&copy; <span id="year"></span> DD Online Shop. All Rights Reserved.</p>
     </footer>
 
-    <script>
-        (function () {
-            const navBtn = document.querySelector('.nav-toggle');
-            const nav = document.getElementById('primary-navigation');
-            const shopBtn = document.querySelector('.shop-btn');
-            const modal = document.getElementById('shop-modal');
-            const closeButtons = modal.querySelectorAll('.close-modal');
-            const viewProductsBtn = modal.querySelector('.view-products');
-            const productsSection = document.getElementById('products');
-            const cartIcon = document.querySelector('.cart-icon');
-            const cartPanel = document.getElementById('cart-panel');
-            const closeCartBtn = document.querySelector('.close-cart');
-            const cartItemsContainer = cartPanel.querySelector('.cart-items');
-            const cartTotalElement = document.getElementById('cart-total');
-            const checkoutBtn = document.querySelector('.checkout-btn');
-
-            const cart = {};
-
-            navBtn.addEventListener('click', function () {
-                const open = nav.classList.toggle('open');
-                navBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-            });
-
-            function openModal() {
-                modal.classList.add('open');
-                modal.setAttribute('aria-hidden', 'false');
-                document.body.style.overflow = 'hidden';
-            }
-
-            function closeModal() {
-                modal.classList.remove('open');
-                modal.setAttribute('aria-hidden', 'true');
-                document.body.style.overflow = '';
-            }
-
-            function openCart() {
-                cartPanel.classList.add('open');
-                cartPanel.setAttribute('aria-hidden', 'false');
-                document.body.style.overflow = 'hidden';
-            }
-
-            function closeCart() {
-                cartPanel.classList.remove('open');
-                cartPanel.setAttribute('aria-hidden', 'true');
-                document.body.style.overflow = '';
-            }
-
-            function updateCartDisplay() {
-                const items = Object.values(cart);
-                cartItemsContainer.innerHTML = '';
-
-                if (items.length === 0) {
-                    cartItemsContainer.innerHTML = '<p class="empty-cart">Your cart is empty.</p>';
-                } else {
-                    items.forEach(item => {
-                        const itemRow = document.createElement('div');
-                        itemRow.className = 'cart-item';
-                        itemRow.innerHTML = `
-                            <div class="cart-item-info">
-                                <strong>${item.name}</strong>
-                                <span>¥${item.price} x ${item.quantity}</span>
-                            </div>
-                            <span class="cart-item-total">¥${item.price * item.quantity}</span>
-                        `;
-                        cartItemsContainer.appendChild(itemRow);
-                    });
-                }
-
-                const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
-                cartTotalElement.textContent = `¥${total}`;
-                cartIcon.textContent = `🛒 Cart (${items.reduce((sum, item) => sum + item.quantity, 0)})`;
-            }
-
-            function addToCart(card) {
-                const name = card.querySelector('h3').textContent;
-                const priceText = card.querySelector('.price').textContent;
-                const price = Number(priceText.replace(/[^0-9]/g, ''));
-
-                if (!cart[name]) {
-                    cart[name] = { name, price, quantity: 0 };
-                }
-                cart[name].quantity += 1;
-                updateCartDisplay();
-            }
-
-            document.querySelectorAll('.add-to-cart').forEach(button => {
-                button.addEventListener('click', function () {
-                    const card = this.closest('.product-card');
-                    if (card) {
-                        addToCart(card);
-                    }
-                });
-            });
-
-            cartIcon.addEventListener('click', openCart);
-            closeCartBtn.addEventListener('click', closeCart);
-            cartPanel.addEventListener('click', function (event) {
-                if (event.target === cartPanel) {
-                    closeCart();
-                }
-            });
-
-            checkoutBtn.addEventListener('click', function () {
-                alert('Checkout feature is not set up yet. Your cart is ready!');
-            });
-
-            shopBtn.addEventListener('click', openModal);
-            closeButtons.forEach(button => button.addEventListener('click', closeModal));
-            modal.addEventListener('click', function (event) {
-                if (event.target === modal) {
-                    closeModal();
-                }
-            });
-
-            viewProductsBtn.addEventListener('click', function () {
-                closeModal();
-                productsSection.scrollIntoView({ behavior: 'smooth' });
-            });
-
-            updateCartDisplay();
-        })();
-    </script>
+    <script src="script.js"></script>
 
 </body>
 
