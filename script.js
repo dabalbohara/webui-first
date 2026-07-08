@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartTotalElement = document.getElementById('cart-total');
     const checkoutBtn = document.querySelector('.checkout-btn');
     const productSearch = document.getElementById('product-search');
+    const sortSelect = document.getElementById('sort-products');
     const productGrid = document.querySelector('.product-grid');
     const toast = document.getElementById('toast');
     const year = document.getElementById('year');
@@ -181,11 +182,45 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    if (productSearch && productGrid) {
-        const cards = Array.from(productGrid.querySelectorAll('.product-card'));
+    function renderProducts() {
+        if (!productGrid) return;
 
+        const cards = Array.from(productGrid.querySelectorAll('.product-card'));
+        const visibleCards = cards.filter(card => !card.classList.contains('is-hidden'));
+        const hiddenCards = cards.filter(card => card.classList.contains('is-hidden'));
+
+        let emptyState = productGrid.querySelector('.empty-state');
+        if (!emptyState) {
+            emptyState = document.createElement('div');
+            emptyState.className = 'empty-state';
+            emptyState.textContent = 'No products matched your search. Try a different keyword.';
+            productGrid.appendChild(emptyState);
+        }
+
+        const sortedCards = [...visibleCards].sort((a, b) => {
+            const priceA = Number((a.querySelector('.price')?.textContent || '¥0').replace(/[^0-9]/g, ''));
+            const priceB = Number((b.querySelector('.price')?.textContent || '¥0').replace(/[^0-9]/g, ''));
+
+            if (sortSelect && sortSelect.value === 'low') {
+                return priceA - priceB;
+            }
+
+            if (sortSelect && sortSelect.value === 'high') {
+                return priceB - priceA;
+            }
+
+            return 0;
+        });
+
+        cards.forEach(card => card.remove());
+        [...sortedCards, ...hiddenCards].forEach(card => productGrid.appendChild(card));
+        emptyState.style.display = visibleCards.length === 0 ? 'block' : 'none';
+    }
+
+    if (productSearch && productGrid) {
         productSearch.addEventListener('input', () => {
             const term = productSearch.value.trim().toLowerCase();
+            const cards = Array.from(productGrid.querySelectorAll('.product-card'));
             let visibleCount = 0;
 
             cards.forEach(card => {
@@ -195,17 +230,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (matches) visibleCount += 1;
             });
 
-            let emptyState = productGrid.querySelector('.empty-state');
-            if (!emptyState) {
-                emptyState = document.createElement('div');
-                emptyState.className = 'empty-state';
-                emptyState.textContent = 'No products matched your search. Try a different keyword.';
-                productGrid.appendChild(emptyState);
+            renderProducts();
+            if (visibleCount === 0) {
+                showToast('No matching products found');
             }
-
-            emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
         });
     }
 
+    if (sortSelect) {
+        sortSelect.addEventListener('change', renderProducts);
+    }
+
     updateCartDisplay();
+    renderProducts();
 });

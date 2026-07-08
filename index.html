@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DD Online Shop</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">"
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -103,10 +103,17 @@
         <h2>Featured Products</h2>
 
         <div class="product-toolbar">
-            <label class="search-bar" for="product-search">
-                <span>🔍</span>
-                <input id="product-search" type="search" placeholder="Search gadgets or accessories" />
-            </label>
+            <div class="toolbar-controls">
+                <label class="search-bar" for="product-search">
+                    <span>🔍</span>
+                    <input id="product-search" type="search" placeholder="Search gadgets or accessories" />
+                </label>
+                <select id="sort-products" class="sort-select" aria-label="Sort products">
+                    <option value="featured">Featured</option>
+                    <option value="low">Price: Low to High</option>
+                    <option value="high">Price: High to Low</option>
+                </select>
+            </div>
             <p class="search-help">Try searching for headphones, watch, mouse, or speaker.</p>
         </div>
 

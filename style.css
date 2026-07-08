@@ -444,6 +444,13 @@ body::before {
     flex-wrap: wrap;
 }
 
+.toolbar-controls {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
 .search-bar {
     display: flex;
     align-items: center;
@@ -469,6 +476,16 @@ body::before {
 .search-help {
     color: var(--muted);
     font-size: 14px;
+}
+
+.sort-select {
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 12px 14px;
+    background: var(--card);
+    color: var(--dark);
+    min-width: 180px;
+    box-shadow: 0 8px 20px rgba(15, 23, 36, 0.05);
 }
 
 .product-container {
