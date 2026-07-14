@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DD Online Shop</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,10 +14,11 @@
 
     <header class="navbar">
         <div class="logo">DD<span>Shop</span></div>
-        <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false"
-            aria-label="Toggle navigation">
+
+        <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
             <span class="hamburger"></span>
         </button>
+
         <nav id="primary-navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -25,232 +27,407 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-        <div class="cart-icon" tabindex="0">🛒 Cart (0)</div>
+
+        <div class="cart-icon">
+            🛒 Cart (<span id="cart-count">0</span>)
+        </div>
     </header>
 
+
     <section class="hero">
+
         <div class="hero-content">
+
             <span class="eyebrow">Curated tech lifestyle</span>
-            <h1>Premium gadgets, smarter everyday living.</h1>
-            <p>Discover fast shipping, exclusive deals, and beautifully designed accessories for modern life.</p>
+
+            <h1>
+                Smart Gadgets For Your Modern Lifestyle.
+            </h1>
+
+            <p>
+                Shop premium electronics, smart accessories and daily essentials
+                with fast delivery and secure checkout.
+            </p>
+
+
             <div class="hero-actions">
-                <button class="shop-btn" type="button">Shop Now</button>
-                <a class="secondary-link" href="#products">Explore Products</a>
+
+                <button class="shop-btn" type="button">
+                    Shop Now
+                </button>
+
+                <a class="secondary-link" href="#products">
+                    Explore Products
+                </a>
+
             </div>
+
+
             <div class="hero-highlights">
+
                 <span>⚡ Fast Delivery</span>
                 <span>🛡️ Secure Checkout</span>
                 <span>⭐ 4.9/5 Rated</span>
+
             </div>
+
         </div>
+
     </section>
+
+
 
     <section class="feature-section">
+
         <div class="feature-grid">
+
             <article class="feature-card">
                 <h3>Fresh Arrivals</h3>
-                <p>Stay ahead with the latest gadgets and accessories released every season.</p>
+                <p>Latest gadgets and accessories for everyday smart living.</p>
             </article>
+
+
             <article class="feature-card">
                 <h3>Smart Savings</h3>
-                <p>Enjoy premium quality at prices that feel as good as the products look.</p>
+                <p>Premium products at affordable prices.</p>
             </article>
+
+
             <article class="feature-card">
-                <h3>Gift-Ready Picks</h3>
-                <p>Thoughtful items for work, travel, and everyday comfort that feel special.</p>
+                <h3>Gift Ready Picks</h3>
+                <p>Perfect gadgets for work, travel and lifestyle.</p>
             </article>
+
+
         </div>
+
     </section>
+
+
 
     <section class="stats-bar">
-        <div class="card">
-            <div><strong>12k+</strong><span>Happy Customers</span></div>
-            <div><strong>98%</strong><span>On-time Delivery</span></div>
-            <div><strong>24/7</strong><span>Support Available</span></div>
-        </div>
-    </section>
 
+        <div class="card">
+
+            <div>
+                <strong>12k+</strong>
+                <span>Happy Customers</span>
+            </div>
+
+
+            <div>
+                <strong>98%</strong>
+                <span>On-time Delivery</span>
+            </div>
+
+
+            <div>
+                <strong>24/7</strong>
+                <span>Support Available</span>
+            </div>
+
+
+        </div>
+
+    </section>
     <section class="delivery-section">
+
         <div class="delivery-card">
+
             <div class="delivery-content">
+
                 <span class="eyebrow">Online Delivery</span>
+
                 <h2>Fast delivery right to your doorstep</h2>
-                <p>Order from anywhere and enjoy secure packaging, live tracking, and quick delivery in your city.</p>
+
+                <p>
+                    Order from anywhere with secure packaging, live tracking and quick delivery.
+                </p>
+
                 <ul>
                     <li>Same-day dispatch for selected products</li>
-                    <li>Tracking updates sent to your phone</li>
-                    <li>Cash on delivery and digital payment available</li>
+                    <li>Tracking updates on your phone</li>
+                    <li>Cash on delivery available</li>
                 </ul>
+
             </div>
+
+
             <div class="delivery-info">
+
                 <div class="delivery-box">
                     <strong>2-4 hrs</strong>
-                    <span>Express delivery</span>
+                    <span>Express Delivery</span>
                 </div>
+
+
                 <div class="delivery-box">
                     <strong>Free</strong>
-                    <span>Delivery above ¥5000</span>
+                    <span>Above ¥5000</span>
                 </div>
+
+
                 <div class="delivery-box">
                     <strong>24/7</strong>
-                    <span>Support line</span>
+                    <span>Support</span>
                 </div>
+
             </div>
+
         </div>
+
     </section>
 
+
+
     <main class="product-container" id="products">
-        <h2>Featured Products</h2>
+
+        <h2>Latest Tech Products</h2>
+
 
         <div class="product-toolbar">
-            <label class="search-bar" for="product-search">
+
+            <label class="search-bar">
+
                 <span>🔍</span>
-                <input id="product-search" type="search" placeholder="Search gadgets or accessories" />
+
+                <input id="product-search" type="search" placeholder="Search products...">
+
             </label>
-            <p class="search-help">Try searching for headphones, watch, mouse, or speaker.</p>
+
+            <p class="search-help">
+                Search headphones, watch, mouse, keyboard and more.
+            </p>
+
         </div>
 
+
+
         <div class="product-grid">
+
+
             <div class="product-card">
                 <span class="badge">New</span>
                 <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80"
-                    alt="Wireless Headphones"
-                    onerror="this.onerror=null;this.src='https://via.placeholder.com/480x320?text=Wireless+Headphones'">
+                    alt="Wireless Headphones">
                 <h3>Wireless Headphones</h3>
                 <p class="price">¥4000</p>
                 <button class="add-to-cart">Add to Cart</button>
             </div>
 
+
+
             <div class="product-card">
                 <span class="badge">Hot</span>
-                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80" alt="Smart Watch v2"
-                    onerror="this.onerror=null;this.src='https://via.placeholder.com/480x320?text=Smart+Watch+v2'">
-                <h3>Smart Watch v2</h3>
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80" alt="Smart Watch">
+                <h3>Smart Watch</h3>
                 <p class="price">¥7999</p>
                 <button class="add-to-cart">Add to Cart</button>
             </div>
 
+
+
             <div class="product-card">
                 <span class="badge">Sale</span>
                 <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500&q=80"
-                    alt="Bluetooth Earbuds"
-                    onerror="this.onerror=null;this.src='https://via.placeholder.com/480x320?text=Bluetooth+Earbuds'">
+                    alt="Bluetooth Earbuds">
                 <h3>Bluetooth Earbuds</h3>
                 <p class="price">¥2500</p>
                 <button class="add-to-cart">Add to Cart</button>
             </div>
 
+
+
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500&q=80"
-                    alt="Wireless Gaming Mouse"
-                    onerror="this.onerror=null;this.src='https://via.placeholder.com/480x320?text=Wireless+Gaming+Mouse'">
+
+                <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500&q=80" alt="Gaming Mouse">
+
                 <h3>Wireless Gaming Mouse</h3>
+
                 <p class="price">¥2999</p>
+
                 <button class="add-to-cart">Add to Cart</button>
+
             </div>
 
+
+
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1624996379697-f01d168b1a52?w=500&q=80" alt="Laptop Stand"
-                    onerror="this.onerror=null;this.src='https://via.placeholder.com/480x320?text=Laptop+Stand'">
+
+                <img src="https://images.unsplash.com/photo-1624996379697-f01d168b1a52?w=500&q=80" alt="Laptop Stand">
+
                 <h3>Adjustable Laptop Stand</h3>
+
                 <p class="price">¥1799</p>
+
                 <button class="add-to-cart">Add to Cart</button>
+
             </div>
 
+
+
             <div class="product-card">
+
+                <img src="https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=500&q=80"
+                    alt="Mechanical Keyboard">
+
+                <h3>Mechanical Keyboard</h3>
+
+                <p class="price">¥3999</p>
+
+                <button class="add-to-cart">Add to Cart</button>
+
+            </div>
+
+
+
+            <div class="product-card">
+
                 <img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500&q=80"
-                    alt="Portable Bluetooth Speaker"
-                    onerror="this.onerror=null;this.src='https://via.placeholder.com/480x320?text=Bluetooth+Speaker'">
+                    alt="Bluetooth Speaker">
+
                 <h3>Portable Bluetooth Speaker</h3>
+
                 <p class="price">¥3499</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
 
+                <button class="add-to-cart">Add to Cart</button>
+
+            </div>
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1609592424109-dd9892f1b17c?w=500&q=80" alt="Power Bank"
-                    onerror="this.onerror=null;this.src='https://via.placeholder.com/480x320?text=Power+Bank'">
+
+                <img src="https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=500&q=80" alt="Power Bank">
+
                 <h3>Fast Charging Power Bank</h3>
+
                 <p class="price">¥1299</p>
+
                 <button class="add-to-cart">Add to Cart</button>
+
             </div>
 
+
+
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1610792516307-ea5acd9c3b00?w=500&q=80" alt="Phone Case"
-                    onerror="this.onerror=null;this.src='https://via.placeholder.com/480x320?text=Phone+Case'">
+
+                <img src="https://images.unsplash.com/photo-1610792516307-ea5acd9c3b00?w=500&q=80" alt="Phone Case">
+
                 <h3>Protective Phone Case</h3>
+
                 <p class="price">¥899</p>
+
                 <button class="add-to-cart">Add to Cart</button>
+
             </div>
 
+
+
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1622445262465-2481c4574875?w=500&q=80"
-                    alt="Wireless Charging Pad"
-                    onerror="this.onerror=null;this.src='https://via.placeholder.com/480x320?text=Charging+Pad'">
+
+                <img src="" alt="Wireless Charger">
+
                 <h3>Wireless Charging Pad</h3>
+
                 <p class="price">¥1899</p>
+
                 <button class="add-to-cart">Add to Cart</button>
+
             </div>
 
+
+
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500&q=80" alt="Digital Camera"
-                    onerror="this.onerror=null;this.src='https://via.placeholder.com/480x320?text=Digital+Camera'">
+
+                <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500&q=80" alt="Digital Camera">
+
                 <h3>Compact Digital Camera</h3>
+
                 <p class="price">¥8999</p>
+
                 <button class="add-to-cart">Add to Cart</button>
+
             </div>
 
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=500&q=80"
-                    alt="Noise Cancelling Headset"
-                    onerror="this.onerror=null;this.src='https://via.placeholder.com/480x320?text=Noise+Headset'">
-                <h3>Noise-Cancelling Headset</h3>
-                <p class="price">¥4599</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
+
 
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=500&q=80"
-                    alt="USB-C Cable Pack"
-                    onerror="this.onerror=null;this.src='https://via.placeholder.com/480x320?text=USB-C+Cable'">
-                <h3>Premium USB-C Cable Pack</h3>
-                <p class="price">¥499</p>
+
+                <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=500&q=80" alt="USB Hub">
+
+                <h3>USB-C Hub</h3>
+
+                <p class="price">¥2199</p>
+
                 <button class="add-to-cart">Add to Cart</button>
+
             </div>
+
+
         </div>
+
     </main>
 
+
+
     <div class="shop-modal" id="shop-modal" aria-hidden="true">
-        <div class="shop-modal-content" role="dialog" aria-modal="true" aria-labelledby="shop-modal-title">
-            <button class="close-modal" aria-label="Close shop dialog">×</button>
-            <h2 id="shop-modal-title">Shop Now</h2>
-            <p>Select a section below to start shopping quickly.</p>
-            <div class="shop-modal-actions">
-                <button class="view-products" type="button">View Featured Products</button>
-                <button class="close-modal secondary" type="button">Close</button>
-            </div>
+
+        <div class="shop-modal-content">
+
+            <button class="close-modal">×</button>
+
+            <h2>Shop Now</h2>
+
+            <p>Select products and start shopping.</p>
+
+            <button class="view-products">
+                View Products
+            </button>
+
         </div>
+
     </div>
 
-    <div class="cart-panel" id="cart-panel" aria-hidden="true">
-        <div class="cart-panel-content" role="dialog" aria-modal="true" aria-labelledby="cart-panel-title">
-            <button class="close-cart" aria-label="Close cart">×</button>
-            <h2 id="cart-panel-title">Your Cart</h2>
+
+
+    <div class="cart-panel" id="cart-panel">
+
+        <div class="cart-panel-content">
+
+            <button class="close-cart">×</button>
+
+            <h2>Your Cart</h2>
+
             <div class="cart-items"></div>
+
+
             <div class="cart-summary">
+
                 <span>Total:</span>
+
                 <strong id="cart-total">¥0</strong>
+
             </div>
-            <button class="checkout-btn" type="button">Checkout</button>
+
+
+            <button class="checkout-btn">
+                Checkout
+            </button>
+
+
         </div>
+
     </div>
-
-    <div id="toast" class="toast" role="status" aria-live="polite"></div>
-
+    <div id="toast" class="toast"></div>
     <footer>
-        <p>&copy; <span id="year"></span> DD Online Shop. All Rights Reserved.</p>
+
+        <p>
+            &copy; <span id="year"></span> DD Online Shop.
+            All Rights Reserved.
+        </p>
+
     </footer>
 
     <script src="script.js"></script>
+
 
 </body>
 
