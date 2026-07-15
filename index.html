@@ -4,431 +4,297 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DD Online Shop</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>GadgetVerse - Online Gadget Shop</title>
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased min-h-screen">
 
-    <header class="navbar">
-        <div class="logo">DD<span>Shop</span></div>
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#"
+                        class="text-2xl font-black bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent tracking-wider">
+                        GADGET<span class="text-white">VERSE</span>
+                    </a>
+                </div>
 
-        <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
-            <span class="hamburger"></span>
-        </button>
+                <!-- Search Bar (Desktop) -->
+                <div class="hidden md:block flex-1 max-w-md mx-8">
+                    <div class="relative">
+                        <input type="text" placeholder="Search latest gadgets..."
+                            class="w-full bg-slate-800 text-sm text-slate-200 pl-10 pr-4 py-2 rounded-xl border border-slate-700 focus:outline-none focus:border-cyan-500 transition-colors">
+                        <div class="absolute left-3 top-2.5 text-slate-400">
+                            <i class="fa-solid fa-magnifying-glass text-sm"></i>
+                        </div>
+                    </div>
+                </div>
 
-        <nav id="primary-navigation">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+                <!-- Navigation Links & Cart -->
+                <div class="flex items-center space-x-6">
+                    <a href="#shop"
+                        class="hidden sm:inline text-sm font-medium hover:text-cyan-400 transition-colors">Shop</a>
+                    <a href="#features"
+                        class="hidden sm:inline text-sm font-medium hover:text-cyan-400 transition-colors">Why Us</a>
 
-        <div class="cart-icon">
-            🛒 Cart (<span id="cart-count">0</span>)
+                    <!-- Cart Icon with Badge -->
+                    <button onclick="viewCart()"
+                        class="relative p-2 text-slate-300 hover:text-cyan-400 transition-colors">
+                        <i class="fa-solid fa-cart-shopping text-xl"></i>
+                        <span id="cart-count"
+                            class="absolute -top-1 -right-1 bg-cyan-500 text-slate-950 text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full animate-pulse">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero / Banner Section -->
+    <header class="relative overflow-hidden py-24 bg-gradient-to-b from-slate-900 to-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="space-y-6 text-center lg:text-left">
+                    <span
+                        class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                        <i class="fa-solid fa-fire-flame-curved"></i> Season End Sale: Up to 40% OFF
+                    </span>
+                    <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-none text-white">
+                        Upgrade Your <br>
+                        <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Digital
+                            Lifestyle</span>
+                    </h1>
+                    <p class="text-lg text-slate-400 max-w-lg mx-auto lg:mx-0">
+                        Explore the future of tech. Direct delivery, premium quality, and full brand warranty on all
+                        premium gadgets.
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+                        <a href="#shop"
+                            class="px-8 py-4 bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 font-bold rounded-xl shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 transition-all duration-300 transform hover:-translate-y-1">
+                            Shop Now <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#features"
+                            class="px-8 py-4 bg-slate-800 text-slate-300 hover:text-white border border-slate-700 font-semibold rounded-xl transition-all duration-300">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Visual Banner (Simulated) -->
+                <div class="relative flex justify-center">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-3xl blur-3xl opacity-25">
+                    </div>
+                    <div
+                        class="relative bg-slate-800/80 border border-slate-700 p-8 rounded-3xl w-full max-w-md shadow-2xl backdrop-blur">
+                        <div class="flex justify-between items-center mb-6">
+                            <span class="text-xs font-bold text-cyan-400 tracking-wider uppercase">Hot Pick</span>
+                            <span class="bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded">SAVE
+                                $50</span>
+                        </div>
+                        <div class="h-48 bg-slate-700/50 rounded-2xl flex items-center justify-center mb-6">
+                            <!-- Simulated Product Image placeholder with modern look -->
+                            <i class="fa-solid fa-headphones text-6xl text-cyan-400 animate-bounce"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">CyberSound Pro ANC</h3>
+                        <p class="text-slate-400 text-xs mt-1">Hybrid Active Noise Cancelling Headphones</p>
+                        <div class="flex justify-between items-center mt-6">
+                            <div>
+                                <span class="text-2xl font-black text-white">$249</span>
+                                <span class="text-sm text-slate-500 line-through ml-2">$299</span>
+                            </div>
+                            <button onclick="addToCart('CyberSound Pro ANC')"
+                                class="bg-cyan-500 text-slate-950 font-bold px-4 py-2 rounded-lg text-sm hover:bg-cyan-400 transition-colors">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
-
-    <section class="hero">
-
-        <div class="hero-content">
-
-            <span class="eyebrow">Curated tech lifestyle</span>
-
-            <h1>
-                Smart Gadgets For Your Modern Lifestyle.
-            </h1>
-
-            <p>
-                Shop premium electronics, smart accessories and daily essentials
-                with fast delivery and secure checkout.
-            </p>
-
-
-            <div class="hero-actions">
-
-                <button class="shop-btn" type="button">
-                    Shop Now
-                </button>
-
-                <a class="secondary-link" href="#products">
-                    Explore Products
-                </a>
-
-            </div>
-
-
-            <div class="hero-highlights">
-
-                <span>⚡ Fast Delivery</span>
-                <span>🛡️ Secure Checkout</span>
-                <span>⭐ 4.9/5 Rated</span>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <section class="feature-section">
-
-        <div class="feature-grid">
-
-            <article class="feature-card">
-                <h3>Fresh Arrivals</h3>
-                <p>Latest gadgets and accessories for everyday smart living.</p>
-            </article>
-
-
-            <article class="feature-card">
-                <h3>Smart Savings</h3>
-                <p>Premium products at affordable prices.</p>
-            </article>
-
-
-            <article class="feature-card">
-                <h3>Gift Ready Picks</h3>
-                <p>Perfect gadgets for work, travel and lifestyle.</p>
-            </article>
-
-
-        </div>
-
-    </section>
-
-
-
-    <section class="stats-bar">
-
-        <div class="card">
-
-            <div>
-                <strong>12k+</strong>
-                <span>Happy Customers</span>
-            </div>
-
-
-            <div>
-                <strong>98%</strong>
-                <span>On-time Delivery</span>
-            </div>
-
-
-            <div>
-                <strong>24/7</strong>
-                <span>Support Available</span>
-            </div>
-
-
-        </div>
-
-    </section>
-    <section class="delivery-section">
-
-        <div class="delivery-card">
-
-            <div class="delivery-content">
-
-                <span class="eyebrow">Online Delivery</span>
-
-                <h2>Fast delivery right to your doorstep</h2>
-
-                <p>
-                    Order from anywhere with secure packaging, live tracking and quick delivery.
-                </p>
-
-                <ul>
-                    <li>Same-day dispatch for selected products</li>
-                    <li>Tracking updates on your phone</li>
-                    <li>Cash on delivery available</li>
-                </ul>
-
-            </div>
-
-
-            <div class="delivery-info">
-
-                <div class="delivery-box">
-                    <strong>2-4 hrs</strong>
-                    <span>Express Delivery</span>
+    <!-- Core Features -->
+    <section id="features" class="py-16 bg-slate-950 border-y border-slate-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="flex gap-4 p-6 bg-slate-900/50 rounded-2xl border border-slate-800">
+                    <div class="text-cyan-400 text-2xl"><i class="fa-solid fa-truck-fast"></i></div>
+                    <div>
+                        <h4 class="font-bold text-white">Free & Fast Delivery</h4>
+                        <p class="text-xs text-slate-400 mt-1">Free delivery inside valley within 24 hours.</p>
+                    </div>
                 </div>
-
-
-                <div class="delivery-box">
-                    <strong>Free</strong>
-                    <span>Above ¥5000</span>
+                <div class="flex gap-4 p-6 bg-slate-900/50 rounded-2xl border border-slate-800">
+                    <div class="text-cyan-400 text-2xl"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div>
+                        <h4 class="font-bold text-white">1 Year Warranty</h4>
+                        <p class="text-xs text-slate-400 mt-1">Genuine products with official brand backup.</p>
+                    </div>
                 </div>
-
-
-                <div class="delivery-box">
-                    <strong>24/7</strong>
-                    <span>Support</span>
+                <div class="flex gap-4 p-6 bg-slate-900/50 rounded-2xl border border-slate-800">
+                    <div class="text-cyan-400 text-2xl"><i class="fa-solid fa-rotate-left"></i></div>
+                    <div>
+                        <h4 class="font-bold text-white">7 Days Easy Return</h4>
+                        <p class="text-xs text-slate-400 mt-1">No questions asked return policy.</p>
+                    </div>
                 </div>
-
             </div>
-
         </div>
-
     </section>
 
-
-
-    <main class="product-container" id="products">
-
-        <h2>Latest Tech Products</h2>
-
-
-        <div class="product-toolbar">
-
-            <label class="search-bar">
-
-                <span>🔍</span>
-
-                <input id="product-search" type="search" placeholder="Search products...">
-
-            </label>
-
-            <p class="search-help">
-                Search headphones, watch, mouse, keyboard and more.
-            </p>
-
+    <!-- Product Grid Section -->
+    <section id="shop" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
+            <div>
+                <h2 class="text-3xl font-black text-white tracking-tight">Trending Gadgets</h2>
+                <p class="text-slate-400 text-sm mt-1">Our customer-favorite top selling picks this week.</p>
+            </div>
+            <div class="flex gap-2">
+                <button
+                    class="bg-slate-800 text-cyan-400 text-xs font-bold px-4 py-2 rounded-full border border-slate-700">All</button>
+                <button
+                    class="hover:bg-slate-800 text-slate-400 text-xs font-bold px-4 py-2 rounded-full">Audio</button>
+                <button
+                    class="hover:bg-slate-800 text-slate-400 text-xs font-bold px-4 py-2 rounded-full">Smartwatches</button>
+            </div>
         </div>
 
-
-
-        <div class="product-grid">
-
-
-            <div class="product-card">
-                <span class="badge">New</span>
-                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80"
-                    alt="Wireless Headphones">
-                <h3>Wireless Headphones</h3>
-                <p class="price">¥4000</p>
-                <button class="add-to-cart">Add to Cart</button>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Product 1 -->
+            <div
+                class="bg-slate-950/60 border border-slate-800 rounded-2xl p-5 hover:border-cyan-500/50 transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                    <div
+                        class="h-44 bg-slate-800/40 rounded-xl flex items-center justify-center relative mb-4 overflow-hidden">
+                        <i
+                            class="fa-solid fa-clock-six-thirty text-5xl text-slate-500 group-hover:scale-110 transition-transform duration-300"></i>
+                        <span
+                            class="absolute top-2 left-2 bg-cyan-400 text-slate-950 text-[10px] font-extrabold px-2 py-0.5 rounded-full">NEW</span>
+                    </div>
+                    <h3 class="font-bold text-white group-hover:text-cyan-400 transition-colors">AeroFit Smartwatch</h3>
+                    <p class="text-xs text-slate-500 mt-1">AMOLED, Always-On, 14 Days Battery</p>
+                </div>
+                <div class="flex items-center justify-between mt-6">
+                    <span class="text-xl font-black text-white">$129</span>
+                    <button onclick="addToCart('AeroFit Smartwatch')"
+                        class="w-9 h-9 bg-slate-800 text-white rounded-lg flex items-center justify-center hover:bg-cyan-500 hover:text-slate-950 transition-colors">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
             </div>
 
-
-
-            <div class="product-card">
-                <span class="badge">Hot</span>
-                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80" alt="Smart Watch">
-                <h3>Smart Watch</h3>
-                <p class="price">¥6000</p>
-                <button class="add-to-cart">Add to Cart</button>
+            <!-- Product 2 -->
+            <div
+                class="bg-slate-950/60 border border-slate-800 rounded-2xl p-5 hover:border-cyan-500/50 transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                    <div
+                        class="h-44 bg-slate-800/40 rounded-xl flex items-center justify-center relative mb-4 overflow-hidden">
+                        <i
+                            class="fa-solid fa-keyboard text-5xl text-slate-500 group-hover:scale-110 transition-transform duration-300"></i>
+                    </div>
+                    <h3 class="font-bold text-white group-hover:text-cyan-400 transition-colors">Nova Mech Pro</h3>
+                    <p class="text-xs text-slate-500 mt-1">Mechanical RGB Wireless Keyboard</p>
+                </div>
+                <div class="flex items-center justify-between mt-6">
+                    <span class="text-xl font-black text-white">$89</span>
+                    <button onclick="addToCart('Nova Mech Pro')"
+                        class="w-9 h-9 bg-slate-800 text-white rounded-lg flex items-center justify-center hover:bg-cyan-500 hover:text-slate-950 transition-colors">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
             </div>
 
-
-
-            <div class="product-card">
-                <span class="badge">Sale</span>
-                <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500&q=80"
-                    alt="Bluetooth Earbuds">
-                <h3>Bluetooth Earbuds</h3>
-                <p class="price">¥2500</p>
-                <button class="add-to-cart">Add to Cart</button>
+            <!-- Product 3 -->
+            <div
+                class="bg-slate-950/60 border border-slate-800 rounded-2xl p-5 hover:border-cyan-500/50 transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                    <div
+                        class="h-44 bg-slate-800/40 rounded-xl flex items-center justify-center relative mb-4 overflow-hidden">
+                        <i
+                            class="fa-solid fa-gamepad text-5xl text-slate-500 group-hover:scale-110 transition-transform duration-300"></i>
+                        <span
+                            class="absolute top-2 left-2 bg-red-500 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full">POPULAR</span>
+                    </div>
+                    <h3 class="font-bold text-white group-hover:text-cyan-400 transition-colors">Nexus Triggerpad</h3>
+                    <p class="text-xs text-slate-500 mt-1">Multiplatform Ultra-low Latency Controller</p>
+                </div>
+                <div class="flex items-center justify-between mt-6">
+                    <span class="text-xl font-black text-white">$59</span>
+                    <button onclick="addToCart('Nexus Triggerpad')"
+                        class="w-9 h-9 bg-slate-800 text-white rounded-lg flex items-center justify-center hover:bg-cyan-500 hover:text-slate-950 transition-colors">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
             </div>
 
-
-
-            <div class="product-card">
-
-                <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500&q=80" alt="Gaming Mouse">
-
-                <h3>Wireless Gaming Mouse</h3>
-
-                <p class="price">¥2999</p>
-
-                <button class="add-to-cart">Add to Cart</button>
-
+            <!-- Product 4 -->
+            <div
+                class="bg-slate-950/60 border border-slate-800 rounded-2xl p-5 hover:border-cyan-500/50 transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                    <div
+                        class="h-44 bg-slate-800/40 rounded-xl flex items-center justify-center relative mb-4 overflow-hidden">
+                        <i
+                            class="fa-solid fa-compact-disc text-5xl text-slate-500 group-hover:scale-110 transition-transform duration-300"></i>
+                    </div>
+                    <h3 class="font-bold text-white group-hover:text-cyan-400 transition-colors">SolarCharge Slim</h3>
+                    <p class="text-xs text-slate-500 mt-1">20,000mAh Solar Fast-charging Powerbank</p>
+                </div>
+                <div class="flex items-center justify-between mt-6">
+                    <span class="text-xl font-black text-white">$45</span>
+                    <button onclick="addToCart('SolarCharge Slim')"
+                        class="w-9 h-9 bg-slate-800 text-white rounded-lg flex items-center justify-center hover:bg-cyan-500 hover:text-slate-950 transition-colors">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
             </div>
-
-
-
-            <div class="product-card">
-
-                <img src="https://images.unsplash.com/photo-1624996379697-f01d168b1a52?w=500&q=80" alt="Laptop Stand">
-
-                <h3>Adjustable Laptop Stand</h3>
-
-                <p class="price">¥1799</p>
-
-                <button class="add-to-cart">Add to Cart</button>
-
-            </div>
-
-
-
-            <div class="product-card">
-
-                <img src="https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=500&q=80"
-                    alt="Mechanical Keyboard">
-
-                <h3>Mechanical Keyboard</h3>
-
-                <p class="price">¥3999</p>
-
-                <button class="add-to-cart">Add to Cart</button>
-
-            </div>
-
-
-
-            <div class="product-card">
-
-                <img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500&q=80"
-                    alt="Bluetooth Speaker">
-
-                <h3>Portable Bluetooth Speaker</h3>
-
-                <p class="price">¥3499</p>
-
-                <button class="add-to-cart">Add to Cart</button>
-
-            </div>
-            <div class="product-card">
-
-                <img src="https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=500&q=80" alt="Power Bank">
-
-                <h3>Fast Charging Power Bank</h3>
-
-                <p class="price">¥1299</p>
-
-                <button class="add-to-cart">Add to Cart</button>
-
-            </div>
-
-
-
-            <div class="product-card">
-
-                <img src="https://images.unsplash.com/photo-1610792516307-ea5acd9c3b00?w=500&q=80" alt="Phone Case">
-
-                <h3>Protective Phone Case</h3>
-
-                <p class="price">¥899</p>
-
-                <button class="add-to-cart">Add to Cart</button>
-
-            </div>
-
-
-
-            <div class="product-card">
-
-                <img src="" alt="Wireless Charger">
-
-                <h3>Wireless Charging Pad</h3>
-
-                <p class="price">¥1899</p>
-
-                <button class="add-to-cart">Add to Cart</button>
-
-            </div>
-
-
-
-            <div class="product-card">
-
-                <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500&q=80" alt="Digital Camera">
-
-                <h3>Compact Digital Camera</h3>
-
-                <p class="price">¥8999</p>
-
-                <button class="add-to-cart">Add to Cart</button>
-
-            </div>
-
-
-
-            <div class="product-card">
-
-                <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=500&q=80" alt="USB Hub">
-
-                <h3>USB-C Hub</h3>
-
-                <p class="price">¥2199</p>
-
-                <button class="add-to-cart">Add to Cart</button>
-
-            </div>
-
-
         </div>
+    </section>
 
-    </main>
-
-
-
-    <div class="shop-modal" id="shop-modal" aria-hidden="true">
-
-        <div class="shop-modal-content">
-
-            <button class="close-modal">×</button>
-
-            <h2>Shop Now</h2>
-
-            <p>Select products and start shopping.</p>
-
-            <button class="view-products">
-                View Products
-            </button>
-
-        </div>
-
-    </div>
-
-
-
-    <div class="cart-panel" id="cart-panel">
-
-        <div class="cart-panel-content">
-
-            <button class="close-cart">×</button>
-
-            <h2>Your Cart</h2>
-
-            <div class="cart-items"></div>
-
-
-            <div class="cart-summary">
-
-                <span>Total:</span>
-
-                <strong id="cart-total">¥0</strong>
-
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-12">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-6 text-slate-500 text-sm">
+            <div class="text-center sm:text-left">
+                <span class="font-black text-slate-400 tracking-wider">GADGETVERSE</span>
+                <p class="mt-1">The ultimate playground for tech geeks.</p>
             </div>
-
-
-            <button class="checkout-btn">
-                Checkout
-            </button>
-
-
+            <div class="flex gap-6 text-lg">
+                <a href="#" class="hover:text-cyan-400 transition-colors"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="hover:text-cyan-400 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-cyan-400 transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <p>&copy; 2026 GadgetVerse. Designed with Tailwind.</p>
         </div>
-
-    </div>
-    <div id="toast" class="toast"></div>
-    <footer>
-
-        <p>
-            &copy; <span id="year"></span> DD Online Shop.
-            All Rights Reserved.
-        </p>
-
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Interactive Shop Script -->
+    <script>
+        let cart = [];
+        const cartCountEl = document.getElementById('cart-count');
 
+        function addToCart(productName) {
+            cart.push(productName);
+            cartCountEl.innerText = cart.length;
 
+            // Nice little feedback alert
+            alert(`🛒 ${productName} tapai ko cart ma thapiyo!`);
+        }
+
+        function viewCart() {
+            if (cart.length === 0) {
+                alert("Tapai ko cart khali chha! Gadget thapna push button thichnus.");
+            } else {
+                alert(`Tapai ko Cart ma chhan:\n\n` + cart.map((item, index) => `${index + 1}. ${item}`).join('\n') + `\n\nTotal Items: ${cart.length}`);
+            }
+        }
+    </script>
 </body>
 
 </html>
