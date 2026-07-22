@@ -60,9 +60,11 @@
                 <div class="flex items-center space-x-6">
                     <a href="#" class="text-sm font-semibold text-brand-400 transition-colors">Home</a>
                     <a href="#shop" class="text-sm font-semibold hover:text-brand-400 transition-colors">Products</a>
+                    <a href="#about" class="text-sm font-semibold hover:text-brand-400 transition-colors">About</a>
+                    <a href="#contact" class="text-sm font-semibold hover:text-brand-400 transition-colors">Contact</a>
 
                     <!-- Cart Toggle Button -->
-                    <button onclick="toggleCart(true)"
+                    <button onclick="toggleCart()"
                         class="relative p-2.5 bg-slate-900 rounded-xl border border-slate-800 text-slate-300 hover:text-brand-400 hover:border-brand-500/30 transition-all">
                         <i class="fa-solid fa-cart-shopping text-lg"></i>
                         <span id="cart-count"
@@ -121,8 +123,9 @@
             </div>
             <div class="mt-4 md:mt-0 flex gap-2">
                 <span id="product-total-badge"
-                    class="px-3 py-1 bg-slate-900 border border-slate-800 rounded-lg text-xs font-semibold text-slate-400">Total:
-                    10 Items</span>
+                    class="px-3 py-1 bg-slate-900 border border-slate-800 rounded-lg text-xs font-semibold text-slate-400">
+                    Total: 10 Items
+                </span>
             </div>
         </div>
 
@@ -150,21 +153,20 @@
                         <span class="block text-[10px] text-slate-500 font-bold uppercase tracking-wider">Price</span>
                         <span class="text-xl font-extrabold text-white">¥189,800</span>
                     </div>
-                    <button
-                        onclick="addToCart('iPhone 15 Pro Max', 189800, 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=100&q=80')"
+                    <button onclick="addToCart('iPhone 15 Pro Max', 189800)"
                         class="p-3 bg-slate-800 text-white rounded-xl hover:bg-brand-500 hover:text-slate-950 hover:scale-105 transition-all active:scale-95">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- Product 2: Sony WH-1000XM5 -->
+            <!-- Product 2: Sony WH-1000XM5 (FIXED IMAGE) -->
             <div class="product-card bg-slate-900/40 border border-slate-800 hover:border-brand-500/40 rounded-2xl p-5 hover:shadow-xl hover:shadow-brand-500/5 transition-all duration-300 flex flex-col justify-between group"
                 data-name="Sony WH-1000XM5">
                 <div>
                     <div
                         class="h-48 bg-slate-900 rounded-xl flex items-center justify-center relative mb-5 overflow-hidden border border-slate-800">
-                        <img src="https://images.unsplash.com/photo-1675263155180-2a8326e5e054?auto=format&fit=crop&w=500&q=80"
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80"
                             alt="Sony WH-1000XM5"
                             class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
@@ -178,8 +180,7 @@
                         <span class="block text-[10px] text-slate-500 font-bold uppercase tracking-wider">Price</span>
                         <span class="text-xl font-extrabold text-white">¥49,500</span>
                     </div>
-                    <button
-                        onclick="addToCart('Sony WH-1000XM5', 49500, 'https://images.unsplash.com/photo-1675263155180-2a8326e5e054?auto=format&fit=crop&w=100&q=80')"
+                    <button onclick="addToCart('Sony WH-1000XM5', 49500)"
                         class="p-3 bg-slate-800 text-white rounded-xl hover:bg-brand-500 hover:text-slate-950 hover:scale-105 transition-all active:scale-95">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
@@ -206,8 +207,7 @@
                         <span class="block text-[10px] text-slate-500 font-bold uppercase tracking-wider">Price</span>
                         <span class="text-xl font-extrabold text-white">¥128,800</span>
                     </div>
-                    <button
-                        onclick="addToCart('Apple Watch Ultra 2', 128800, 'https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?auto=format&fit=crop&w=100&q=80')"
+                    <button onclick="addToCart('Apple Watch Ultra 2', 128800)"
                         class="p-3 bg-slate-800 text-white rounded-xl hover:bg-brand-500 hover:text-slate-950 hover:scale-105 transition-all active:scale-95">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
@@ -234,8 +234,7 @@
                         <span class="block text-[10px] text-slate-500 font-bold uppercase tracking-wider">Price</span>
                         <span class="text-xl font-extrabold text-white">¥74,800</span>
                     </div>
-                    <button
-                        onclick="addToCart('Meta Quest 3 VR', 74800, 'https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?auto=format&fit=crop&w=100&q=80')"
+                    <button onclick="addToCart('Meta Quest 3 VR', 74800)"
                         class="p-3 bg-slate-800 text-white rounded-xl hover:bg-brand-500 hover:text-slate-950 hover:scale-105 transition-all active:scale-95">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
@@ -243,7 +242,7 @@
             </div>
 
             <!-- Product 5: Logitech Superlight 2 -->
-            <div class="product-card bg-slate-900/40 border border-slate-800 hover:border-brand-500/40 rounded-2xl p-5 hover:shadow-xl hover:shadow-brand-500/55 transition-all duration-300 flex flex-col justify-between group"
+            <div class="product-card bg-slate-900/40 border border-slate-800 hover:border-brand-500/40 rounded-2xl p-5 hover:shadow-xl hover:shadow-brand-500/5 transition-all duration-300 flex flex-col justify-between group"
                 data-name="Logitech Superlight 2">
                 <div>
                     <div
@@ -262,8 +261,7 @@
                         <span class="block text-[10px] text-slate-500 font-bold uppercase tracking-wider">Price</span>
                         <span class="text-xl font-extrabold text-white">¥25,400</span>
                     </div>
-                    <button
-                        onclick="addToCart('Logitech Superlight 2', 25400, 'https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=100&q=80')"
+                    <button onclick="addToCart('Logitech Superlight 2', 25400)"
                         class="p-3 bg-slate-800 text-white rounded-xl hover:bg-brand-500 hover:text-slate-950 hover:scale-105 transition-all active:scale-95">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
@@ -290,8 +288,7 @@
                         <span class="block text-[10px] text-slate-500 font-bold uppercase tracking-wider">Price</span>
                         <span class="text-xl font-extrabold text-white">¥29,866</span>
                     </div>
-                    <button
-                        onclick="addToCart('DualSense Edge Controller', 29866, 'https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?auto=format&fit=crop&w=100&q=80')"
+                    <button onclick="addToCart('DualSense Edge Controller', 29866)"
                         class="p-3 bg-slate-800 text-white rounded-xl hover:bg-brand-500 hover:text-slate-950 hover:scale-105 transition-all active:scale-95">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
@@ -318,21 +315,20 @@
                         <span class="block text-[10px] text-slate-500 font-bold uppercase tracking-wider">Price</span>
                         <span class="text-xl font-extrabold text-white">¥19,500</span>
                     </div>
-                    <button
-                        onclick="addToCart('Custom Keyboard RGB', 19500, 'https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?auto=format&fit=crop&w=100&q=80')"
+                    <button onclick="addToCart('Custom Keyboard RGB', 19500)"
                         class="p-3 bg-slate-800 text-white rounded-xl hover:bg-brand-500 hover:text-slate-950 hover:scale-105 transition-all active:scale-95">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- Product 8: Anker Prime Power Bank -->
+            <!-- Product 8: Anker Prime Power Bank (FIXED IMAGE) -->
             <div class="product-card bg-slate-900/40 border border-slate-800 hover:border-brand-500/40 rounded-2xl p-5 hover:shadow-xl hover:shadow-brand-500/5 transition-all duration-300 flex flex-col justify-between group"
                 data-name="Anker Prime Bank">
                 <div>
                     <div
                         class="h-48 bg-slate-900 rounded-xl flex items-center justify-center relative mb-5 overflow-hidden border border-slate-800">
-                        <img src="https://images.unsplash.com/photo-1609592424085-f5b1de7d1223?auto=format&fit=crop&w=500&q=80"
+                        <img src="https://images.unsplash.com/photo-1620783770629-122b7f187703?auto=format&fit=crop&w=500&q=80"
                             alt="Anker Prime Power Bank"
                             class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
@@ -346,8 +342,7 @@
                         <span class="block text-[10px] text-slate-500 font-bold uppercase tracking-wider">Price</span>
                         <span class="text-xl font-extrabold text-white">¥18,900</span>
                     </div>
-                    <button
-                        onclick="addToCart('Anker Prime Bank', 18900, 'https://images.unsplash.com/photo-1609592424085-f5b1de7d1223?auto=format&fit=crop&w=100&q=80')"
+                    <button onclick="addToCart('Anker Prime Bank', 18900)"
                         class="p-3 bg-slate-800 text-white rounded-xl hover:bg-brand-500 hover:text-slate-950 hover:scale-105 transition-all active:scale-95">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
@@ -377,15 +372,14 @@
                         <span class="block text-[10px] text-slate-500 font-bold uppercase tracking-wider">Price</span>
                         <span class="text-xl font-extrabold text-white">¥248,800</span>
                     </div>
-                    <button
-                        onclick="addToCart('MacBook Pro M3', 248800, 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=100&q=80')"
+                    <button onclick="addToCart('MacBook Pro M3', 248800)"
                         class="p-3 bg-slate-800 text-white rounded-xl hover:bg-brand-500 hover:text-slate-950 hover:scale-105 transition-all active:scale-95">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- Product 10: Sony PlayStation 5 -->
+            <!-- Product 10: PlayStation 5 Slim -->
             <div class="product-card bg-slate-900/40 border border-slate-800 hover:border-brand-500/40 rounded-2xl p-5 hover:shadow-xl hover:shadow-brand-500/5 transition-all duration-300 flex flex-col justify-between group"
                 data-name="PlayStation 5 Slim">
                 <div>
@@ -403,10 +397,9 @@
                 <div class="flex items-center justify-between mt-6 pt-4 border-t border-slate-800/60">
                     <div>
                         <span class="block text-[10px] text-slate-500 font-bold uppercase tracking-wider">Price</span>
-                        <span class="text-xl font-extrabold text-white">¥59,980</span>
+                        <span class="text-xl font-extrabold text-white">¥66,980</span>
                     </div>
-                    <button
-                        onclick="addToCart('PlayStation 5 Slim', 59980, 'https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=100&q=80')"
+                    <button onclick="addToCart('PlayStation 5 Slim', 66980)"
                         class="p-3 bg-slate-800 text-white rounded-xl hover:bg-brand-500 hover:text-slate-950 hover:scale-105 transition-all active:scale-95">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
@@ -416,193 +409,258 @@
         </div>
     </main>
 
-    <!-- Slide-out Shopping Cart Drawer Overlay -->
-    <div id="cart-drawer" class="fixed inset-0 z-50 invisible transition-all duration-300">
-        <!-- Backdrop -->
-        <div onclick="toggleCart(false)" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
-        <!-- Drawer Panel -->
-        <div class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-slate-900 border-l border-slate-800 flex flex-col justify-between shadow-2xl transition-transform duration-300 translate-x-full"
-            id="drawer-panel">
-            <!-- Cart Header -->
-            <div class="p-6 border-b border-slate-800 flex items-center justify-between">
-                <div class="flex items-center gap-2.5">
-                    <i class="fa-solid fa-basket-shopping text-brand-400 text-lg"></i>
-                    <h3 class="font-black text-xl text-white tracking-tight">Your Cart</h3>
-                </div>
-                <button onclick="toggleCart(false)" class="text-slate-400 hover:text-white p-1">
-                    <i class="fa-solid fa-xmark text-xl"></i>
-                </button>
-            </div>
-
-            <!-- Cart Items Container -->
-            <div id="cart-items-list" class="p-6 overflow-y-auto flex-grow space-y-4 text-sm text-slate-400">
-                <!-- Dynamic items go here -->
-                <div class="text-center py-12">
-                    <i class="fa-solid fa-box-open text-4xl text-slate-700 mb-3"></i>
-                    <p>Your shopping cart is empty.</p>
-                </div>
-            </div>
-
-            <!-- Cart Footer Summary -->
-            <div class="p-6 border-t border-slate-800 bg-slate-950/50">
-                <div class="space-y-2.5 mb-6">
-                    <div class="flex justify-between text-sm text-slate-400">
-                        <span>Subtotal</span>
-                        <span id="cart-subtotal" class="text-slate-200 font-semibold">¥0</span>
-                    </div>
-                    <div class="flex justify-between text-sm text-slate-400">
-                        <span>Shipping</span>
-                        <span class="text-emerald-400 font-medium">FREE</span>
-                    </div>
-                    <div
-                        class="border-t border-slate-800 my-2 pt-2 flex justify-between text-base font-bold text-white">
-                        <span>Total Price</span>
-                        <span id="cart-total" class="text-brand-400">¥0</span>
+    <!-- NEW SECTION: About Us -->
+    <section id="about" class="py-16 bg-slate-900/50 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-brand-400 text-xs font-bold uppercase tracking-widest">About GadgetVerse</span>
+                    <h2 class="text-3xl font-black text-white mt-2">Tokyo's Premier Hub for Authentic Tech</h2>
+                    <p class="text-slate-400 text-sm mt-4 leading-relaxed">
+                        Founded in Akihabara, Tokyo, GadgetVerse bridges the gap between flagship technology and tech
+                        enthusiasts worldwide. We specialize in curating top-tier productivity, gaming, and lifestyle
+                        hardware directly from trusted manufacturer channels.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mt-6">
+                        <div class="p-4 bg-slate-950/80 rounded-xl border border-slate-800">
+                            <i class="fa-solid fa-shield-halved text-brand-400 text-xl mb-2"></i>
+                            <h4 class="font-bold text-white text-sm">100% Authentic</h4>
+                            <p class="text-slate-500 text-xs mt-1">Official warranties guaranteed.</p>
+                        </div>
+                        <div class="p-4 bg-slate-950/80 rounded-xl border border-slate-800">
+                            <i class="fa-solid fa-truck-fast text-brand-400 text-xl mb-2"></i>
+                            <h4 class="font-bold text-white text-sm">Express Shipping</h4>
+                            <p class="text-slate-500 text-xs mt-1">Fast global delivery network.</p>
+                        </div>
                     </div>
                 </div>
-                <button onclick="checkout()"
-                    class="w-full py-3.5 bg-brand-500 hover:bg-brand-400 text-slate-950 font-black rounded-xl transition-all shadow-lg shadow-brand-500/10 flex items-center justify-center gap-2">
-                    Proceed to Checkout <i class="fa-solid fa-arrow-right text-xs"></i>
-                </button>
+                <div class="relative rounded-2xl overflow-hidden border border-slate-800 h-80">
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80"
+                        alt="Tech Store" class="w-full h-full object-cover">
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- NEW SECTION: Contact Us -->
+    <section id="contact" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full border-t border-slate-900">
+        <div class="text-center max-w-xl mx-auto mb-10">
+            <span class="text-brand-400 text-xs font-bold uppercase tracking-widest">Get in Touch</span>
+            <h2 class="text-3xl font-black text-white mt-2">Contact Our Support Team</h2>
+            <p class="text-slate-400 text-sm mt-2">Have questions regarding orders or hardware specs? We are here to
+                help.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-slate-900/40 p-6 rounded-2xl border border-slate-800 flex flex-col items-center text-center">
+                <div
+                    class="w-12 h-12 bg-brand-500/10 text-brand-400 rounded-xl flex items-center justify-center text-xl mb-4">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <h4 class="font-bold text-white">Visit Our Showroom</h4>
+                <p class="text-xs text-slate-400 mt-2">Chiyoda-ku, Akihabara Electric Town<br>Tokyo, Japan 101-0021</p>
+            </div>
+
+            <div class="bg-slate-900/40 p-6 rounded-2xl border border-slate-800 flex flex-col items-center text-center">
+                <div
+                    class="w-12 h-12 bg-brand-500/10 text-brand-400 rounded-xl flex items-center justify-center text-xl mb-4">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <h4 class="font-bold text-white">Email Us</h4>
+                <p class="text-xs text-slate-400 mt-2">support@gadgetverse.tokyo<br>sales@gadgetverse.tokyo</p>
+            </div>
+
+            <div class="bg-slate-900/40 p-6 rounded-2xl border border-slate-800 flex flex-col items-center text-center">
+                <div
+                    class="w-12 h-12 bg-brand-500/10 text-brand-400 rounded-xl flex items-center justify-center text-xl mb-4">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+                <h4 class="font-bold text-white">Call Support</h4>
+                <p class="text-xs text-slate-400 mt-2">+81 3-5555-0199<br>Mon - Sun (9:00 AM - 9:00 PM JST)</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-900 bg-slate-950 py-8 text-center text-xs text-slate-500 w-full">
-        <div class="max-w-7xl mx-auto px-4">
-            <p>&copy; 2026 GadgetVerse. All rights reserved. For educational purposes.</p>
-        </div>
+    <footer class="bg-slate-950 border-t border-slate-900 py-8 text-center text-xs text-slate-500">
+        <p>&copy; 2026 GadgetVerse Tokyo. All rights reserved.</p>
     </footer>
 
-    <!-- Full Functional JavaScript -->
+    <!-- JavaScript Execution -->
     <script>
-        let cart = [];
+        /* =====================
+           GLOBAL CART STATE
+        ===================== */
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-        // Toggle sliding cart drawer view
-        function toggleCart(open) {
-            const drawer = document.getElementById('cart-drawer');
-            const panel = document.getElementById('drawer-panel');
-            if (open) {
-                drawer.classList.remove('invisible');
-                panel.classList.remove('translate-x-full');
-            } else {
-                drawer.classList.add('invisible');
-                panel.classList.add('translate-x-full');
-            }
+        /* =====================
+           NOTIFICATION
+        ===================== */
+        function showToast(msg) {
+            let t = document.createElement("div");
+            t.innerText = msg;
+            t.className = "fixed bottom-5 right-5 bg-emerald-500 text-slate-950 px-4 py-2.5 rounded-xl font-bold shadow-lg z-[10000] transition-all animate-bounce";
+            document.body.appendChild(t);
+            setTimeout(() => t.remove(), 2000);
         }
 
-        // Add standard product to list arrays
-        function addToCart(name, price, imageSrc) {
-            const existingItem = cart.find(item => item.name === name);
-            if (existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                cart.push({ name, price, image: imageSrc, quantity: 1 });
-            }
-            updateCartUI();
-            toggleCart(true); // Auto opens drawer upon addition
-        }
+        /* =====================
+           ADD TO CART
+        ===================== */
+        function addToCart(name, price) {
+            let item = cart.find(p => p.name === name);
 
-        // Handle inner quantity manipulation buttons
-        function updateQuantity(name, amount) {
-            const item = cart.find(item => item.name === name);
             if (item) {
-                item.quantity += amount;
-                if (item.quantity <= 0) {
-                    cart = cart.filter(i => i.name !== name);
-                }
-                updateCartUI();
+                item.qty++;
+            } else {
+                cart.push({ name, price, qty: 1 });
+            }
+
+            updateCart();
+            showToast(name + " added!");
+        }
+
+        /* =====================
+           UPDATE CART COUNTER
+        ===================== */
+        function updateCart() {
+            localStorage.setItem("cart", JSON.stringify(cart));
+            let totalQty = cart.reduce((s, i) => s + i.qty, 0);
+            let cartCountEl = document.getElementById("cart-count");
+            if (cartCountEl) {
+                cartCountEl.innerText = totalQty;
             }
         }
 
-        // Refresh Badge numbers, drawer nodes lists and total calculations
-        function updateCartUI() {
-            const countBadge = document.getElementById('cart-count');
-            const itemsContainer = document.getElementById('cart-items-list');
-            const subtotalText = document.getElementById('cart-subtotal');
-            const totalText = document.getElementById('cart-total');
+        /* =====================
+           SIDEBAR CART TOGGLE
+        ===================== */
+        function toggleCart() {
+            let box = document.getElementById("cart-sidebar");
 
-            // Set dynamic badges
-            const totalItemsCount = cart.reduce((sum, item) => sum + item.quantity, 0);
-            countBadge.innerText = totalItemsCount;
+            if (!box) {
+                box = document.createElement("div");
+                box.id = "cart-sidebar";
+                box.className = "fixed top-0 right-0 h-full w-80 sm:w-96 bg-slate-900 text-slate-100 p-6 shadow-2xl transition-transform duration-300 z-[9999] translate-x-full border-l border-slate-800 flex flex-col justify-between";
+                document.body.appendChild(box);
+            }
+
+            if (box.classList.contains("translate-x-full")) {
+                box.classList.remove("translate-x-full");
+            } else {
+                box.classList.add("translate-x-full");
+            }
+
+            renderCart();
+        }
+
+        /* =====================
+           RENDER CART CONTENT
+        ===================== */
+        function renderCart() {
+            let div = document.getElementById("cart-sidebar");
+            if (!div) return;
+
+            let html = `
+                <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                    <h2 class="text-xl font-bold flex items-center gap-2"><i class="fa-solid fa-cart-shopping text-brand-400"></i> Your Cart</h2>
+                    <button onclick="toggleCart()" class="text-slate-400 hover:text-white p-2"><i class="fa-solid fa-xmark text-lg"></i></button>
+                </div>
+            `;
 
             if (cart.length === 0) {
-                itemsContainer.innerHTML = `
-                    <div class="text-center py-12">
-                        <i class="fa-solid fa-box-open text-4xl text-slate-700 mb-3"></i>
-                        <p>Your shopping cart is empty.</p>
-                    </div>`;
-                subtotalText.innerText = '¥0';
-                totalText.innerText = '¥0';
-                return;
+                html += `<div class="flex-grow flex items-center justify-center text-slate-500 font-medium"><p>Your cart is empty</p></div>`;
+            } else {
+                let total = 0;
+                html += `<div class="flex-grow overflow-y-auto my-4 pr-1 space-y-4">`;
+
+                cart.forEach((item, i) => {
+                    total += item.price * item.qty;
+                    html += `
+                    <div class="bg-slate-950/60 p-3.5 rounded-xl border border-slate-800/80 flex justify-between items-center">
+                        <div>
+                            <h4 class="font-semibold text-sm text-white">${item.name}</h4>
+                            <p class="text-xs text-slate-400 mt-1">¥${item.price.toLocaleString()} × ${item.qty}</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button onclick="changeQty(${i},-1)" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-xs text-white">-</button>
+                            <span class="text-xs font-bold w-4 text-center">${item.qty}</span>
+                            <button onclick="changeQty(${i},1)" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-xs text-white">+</button>
+                            <button onclick="removeItem(${i})" class="text-rose-500 hover:text-rose-400 text-sm ml-1"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+                    `;
+                });
+
+                html += `</div>`;
+                html += `
+                    <div class="pt-4 border-t border-slate-800">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-sm text-slate-400">Total:</span>
+                            <span class="text-xl font-extrabold text-white">¥${total.toLocaleString()}</span>
+                        </div>
+                        <button onclick="checkout()" class="w-full py-3 bg-brand-500 text-slate-950 font-bold rounded-xl hover:bg-brand-400 transition-colors">Checkout Now</button>
+                    </div>
+                `;
             }
 
-            // Populate current checkout lists layout template
-            let listHTML = '';
-            let subtotalPrice = 0;
-
-            cart.forEach(item => {
-                const itemCost = item.price * item.quantity;
-                subtotalPrice += itemCost;
-                listHTML += `
-                    <div class="flex items-center justify-between bg-slate-950/40 p-3 rounded-xl border border-slate-800/80">
-                        <div class="flex items-center gap-3">
-                            <img src="${item.image}" class="w-12 h-12 rounded-lg object-cover bg-slate-900 border border-slate-800" alt="${item.name}">
-                            <div>
-                                <h4 class="font-bold text-white text-xs max-w-[160px] truncate">${item.name}</h4>
-                                <span class="text-xs text-brand-400 font-semibold block mt-0.5">¥${item.price.toLocaleString()}</span>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-2 bg-slate-900 px-2.5 py-1.5 rounded-lg border border-slate-800">
-                            <button onclick="updateQuantity('${item.name}', -1)" class="hover:text-white transition-colors text-xs px-1"><i class="fa-solid fa-minus"></i></button>
-                            <span class="text-xs font-bold text-white px-1">${item.quantity}</span>
-                            <button onclick="updateQuantity('${item.name}', 1)" class="hover:text-white transition-colors text-xs px-1"><i class="fa-solid fa-plus"></i></button>
-                        </div>
-                    </div>`;
-            });
-
-            itemsContainer.innerHTML = listHTML;
-            subtotalText.innerText = `¥${subtotalPrice.toLocaleString()}`;
-            totalText.innerText = `¥${subtotalPrice.toLocaleString()}`;
+            div.innerHTML = html;
         }
 
-        // Live Grid Item Filter (Search Functionality)
+        /* =====================
+           CART ACTIONS
+        ===================== */
+        function changeQty(i, val) {
+            cart[i].qty += val;
+            if (cart[i].qty <= 0) {
+                cart.splice(i, 1);
+            }
+            updateCart();
+            renderCart();
+        }
+
+        function removeItem(i) {
+            cart.splice(i, 1);
+            updateCart();
+            renderCart();
+        }
+
+        function checkout() {
+            alert("Order placed successfully!");
+            cart = [];
+            updateCart();
+            renderCart();
+        }
+
+        /* =====================
+           SEARCH & FILTERS
+        ===================== */
         function filterProducts() {
-            const query = document.getElementById('search-input').value.toLowerCase();
-            applyFilter(query);
+            let input = document.getElementById("search-input").value.toLowerCase();
+            let products = document.querySelectorAll(".product-card");
+
+            products.forEach(p => {
+                let name = p.dataset.name.toLowerCase();
+                p.style.display = name.includes(input) ? "flex" : "none";
+            });
         }
 
         function filterProductsMobile() {
-            const query = document.getElementById('search-input-mobile').value.toLowerCase();
-            applyFilter(query);
-        }
+            let input = document.getElementById("search-input-mobile").value.toLowerCase();
+            let products = document.querySelectorAll(".product-card");
 
-        function applyFilter(query) {
-            const productCards = document.querySelectorAll('.product-card');
-            let visibleCount = 0;
-
-            productCards.forEach(card => {
-                const name = card.getAttribute('data-name').toLowerCase();
-                if (name.includes(query)) {
-                    card.style.display = 'flex';
-                    visibleCount++;
-                } else {
-                    card.style.display = 'none';
-                }
+            products.forEach(p => {
+                let name = p.dataset.name.toLowerCase();
+                p.style.display = name.includes(input) ? "flex" : "none";
             });
-
-            document.getElementById('product-total-badge').innerText = `Total: ${visibleCount} Items`;
         }
 
-        // Simple checkout placeholder
-        function checkout() {
-            if (cart.length === 0) return;
-            alert("Thank you for your order! Processing payment setup...");
-            cart = [];
-            updateCartUI();
-            toggleCart(false);
-        }
+        /* =====================
+           INITIAL LOAD
+        ===================== */
+        document.addEventListener("DOMContentLoaded", () => {
+            updateCart();
+        });
     </script>
 </body>
 
